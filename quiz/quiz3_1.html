@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h1 >Even</h1>
+        <p id="even"></p>
+        <h1>Odd</h1>
+        <p id="odd"></p>
+        <script>
+            for(i=1;i<100;++i){
+                if(i%2==0){
+                    document.getElementById('even').innerHTML += i +"<br>"
+                }
+            }
+            for(i=166;i<212;++i){
+                if(i%2!=0){
+                    document.getElementById('odd').innerHTML += i +"<br>"
+                }
+            }
+        </script>
+    </body>
+</html>

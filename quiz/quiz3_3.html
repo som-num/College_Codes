@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <label>Pattern: </label>
+        <input type="text" id="patterno" oninput="boxMaker(patterno.value,sidecount.value)">
+        <label>Side Count: </label>
+        <input type="number" id="sidecount" oninput="boxMaker(patterno.value,sidecount.value)">
+        <h3 id="boxOut"></h3>
+        <script>
+            
+            function boxMaker(char,num){
+                console.log(char)
+                document.getElementById('boxOut').innerHTML = ""
+                for(i=1;i<=num;i++){
+                    document.getElementById('boxOut').innerHTML += "<br>"
+                    for(k=1;k<=num;k++){
+                        
+                            document.getElementById('boxOut').innerHTML += char
+                        
+                        
+                    }
+                    
+                }
+
+            }
+
+        </script>
+    </body>
+</html>
