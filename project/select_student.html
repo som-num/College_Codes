@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<body>
+    <h1>
+    <label>Input Four Names:</label>
+    <input type="text" name="name" id="name">
+    <button onclick="addName()">Addname</button>
+        
+    </h1>
+    
+    <button onclick="generate(names)">Generate random</button>
+    <h1>Student Names:</h1>
+    <h2 id="studentNames"></h2>
+
+    <h1>Selected Name:</h1>
+    <h2 id="output"></h2>
+
+    <script type="text/javascript">
+        let names = []; 
+        function addName(){
+			name = document.getElementById('name').value
+			if(names.includes(name) != true && names.length < 4){ //para dili mag doble ang ngalan
+				names.push(name);
+			}	
+            document.getElementById('name').value="";
+            document.getElementById('studentNames').innerHTML = names;
+        }
+
+        function generate(names){           
+            document.getElementById('output').innerHTML =""; 
+            newName = names[Math.floor(Math.random()*names.length)];           
+            document.getElementById('output').innerHTML = newName; 
+        }
+        
+    </script>
+</body>
+</html>

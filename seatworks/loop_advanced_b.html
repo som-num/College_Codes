@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <label>Input Character:</label>
+        <input type="text" id="character" oninput="charPyra(character.value,range.value)">
+        <label >Range: </label>
+        <input type="number" id="range" max="10" oninput="charPyra(character.value,range.value)">
+        <h3 id="ast"></h3>
+        <script>
+            pyra = document.getElementById('ast')
+            tab = ""
+            function charPyra(char,range){
+                tab =""
+                for(let i=1; i<=range; i++){               
+                
+                for(let k=range-i;k>=0;k--){
+                    //asterisk number  
+                    tab += "&nbsp&nbsp"; 
+                }                   
+                    
+                    for(let n=1;n<=i*2-1;n++){
+                        tab += char;                      
+                    }
+                    tab += "<br>"             
+
+            }
+            pyra.innerHTML = tab;
+        }
+            
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Employee Salary For the Month of September 2022</title>
+</head>
+<style type="text/css">
+	table{
+		font-size: 30px;
+		border: solid;
+	}
+	table,tr,td,th{
+		border: solid;	
+	}
+	input,select{
+		font-size: 30px;
+	}
+</style>
+<body>
+	<table id="tableid"> 
+		<thead>
+			<tr>
+				<th colspan="7">
+					<h3>
+						PAYMENT OF EMPLOYEES FOR THE MONTH OF SEPTEMBER 2022
+					</h3>
+				</th>
+			</tr>
+			<tr>
+				<th>No.</th>
+				<th>Employee Name</th>
+				<th>Rank</th>
+				<th>Salary</th>
+				<th>Performance Rate%</th>
+				<th>Take Home Pay</th>
+				<th>Remarks</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!--START OF ONE ROW FOR AN EMPLOYEE -->
+			<tr>
+				<td>
+						1				
+				</td>
+				<td >
+					<span class = "name">
+						Clenthon Guanzon
+					</span>					
+				</td>	
+				<td>
+					<select name="rank[]" id='rank1' onchange="displaySalary(this.value); computePay(rank1.value,rate1.value);">
+						<!-- for the rank, the value is the salary, based on the given options -->
+						<option value="23,765.12">Supervisor</option>
+						<option value="12,505.00">Clerk</option>
+						<option value="36,478.86">Manager</option>
+					</select>
+				</td>
+				<td>
+					<span class="salary" id='salary1'>23,765.12</span>
+				</td>
+				<td>
+					<input type="number" name="rate[]" id='rate1' oninput="computePay(rank1.value,rate1.value); setRemarks(this.value); bonusInputHandler(this);">
+					<!-- As you can see, a single event (oninput, onchange, and etc.) can take multiple functions also -->
+				</td>
+				<td>
+					<span class="pay" id='pay1'></span>
+				</td>
+				<td>
+					<span class="remarks" id='remarks1'></span>
+				</td>
+			</tr>
+		<!--END ONE ROW FOR AN EMPLOYEE --> 
+		<!--START OF ONE ROW FOR AN EMPLOYEE -->
+			<tr>
+			<td>
+					2			
+			</td>
+			<td>
+				<span class = "name">
+					Anatoli Khan Dur 
+				</span>	
+				
+			</td>	
+			<td>
+				<select name="rank[]" id='rank2' onchange="displaySalary1(this.value); computePay1(rank2.value,rate2.value);">
+					<!-- for the rank, the value is the salary, based on the given options -->
+					<option value="12,505.00">Clerk</option>
+					<option value="36,478.86">Manager</option>
+					<option value="23,765.12">Supervisor</option>
+					
+				</select>
+			</td>
+			<td>
+				<span class="salary" id='salary2'>12,505.00</span>
+			</td>
+			<td>
+				<input type="number" name="rate[]" id='rate2' oninput="computePay1(rank2.value,rate2.value); setRemarks1(this.value); bonusInputHandler(this);">
+				<!-- As you can see, a single event (oninput, onchange, and etc.) can take multiple functions also -->
+			</td>
+			<td>
+				<span class="pay" id='pay2'></span>
+			</td>
+			<td>
+				<span class="remarks" id='remarks2'></span>
+			</td>
+			</tr>
+			<!--END ONE ROW FOR AN EMPLOYEE --> 
+			<!--START OF ONE ROW FOR AN EMPLOYEE -->
+			<tr>
+				<td>
+						3			
+				</td>
+				<td>
+					<span class = "name">
+						Abdul Jak Khur 
+					</span>	
+					
+				</td>	
+				<td>
+					<select name="rank[]" id='rank3' onchange="displaySalary2(this.value); computePay2(rank3.value,rate3.value);">
+						<!-- for the rank, the value is the salary, based on the given options -->
+						<option value="36,478.86">Manager</option>
+						<option value="12,505.00">Clerk</option>
+						<option value="23,765.12">Supervisor</option>
+						
+					</select>
+				</td>
+				<td>
+					<span class="salary" id='salary3'>36,478.86</span>
+				</td>
+				<td>
+					<input type="number" name="rate[]" id='rate3' oninput="computePay2(rank3.value,rate3.value); setRemarks2(this.value); bonusInputHandler(this);">
+					<!-- As you can see, a single event (oninput, onchange, and etc.) can take multiple functions also -->
+				</td>
+				<td>
+					<span class="pay" id='pay3'></span>
+				</td>
+				<td>
+					<span class="remarks" id='remarks3'></span>
+				</td>
+			</tr>
+    		<!--END ONE ROW FOR AN EMPLOYEE -->    
+				
+		</tbody>
+	</table>
+	<script>
+
+		function displaySalary1(salary){
+			document.getElementById('salary2').innerText = salary;
+		}
+
+		function computePay1(salary,rate){
+		
+			switch (salary){
+				case '12,505.00':
+					 salary = 12505;
+					break;
+				case '23,765.12':
+					salary = 23765.12;
+					break;
+				case '36,478.86':
+					salary = 36478.86;
+					break;
+						
+			}
+			rate = Number(rate)/100			
+			pay = rate*salary	
+			pay2.innerText = pay.toFixed(2)
+		}
+
+		function setRemarks1(rate){
+			if (rate >= 1 && rate <=25){
+				remarks2.innerText= "Poor"
+					
+			}
+			else if (rate >= 26 && rate <=50){
+				remarks2.innerText= "Fair"
+			}
+			else if (rate >= 51 && rate <=75){
+				remarks2.innerText= "Good"
+			}
+			else if (rate >= 76 && rate <=100){
+				remarks2.innerText= "Excellent"
+			}	
+		}
+
+		function displaySalary2(salary){
+			document.getElementById('salary3').innerText = salary;
+		}
+
+		function computePay2(salary,rate){
+		
+			switch (salary){
+				case '12,505.00':
+					 salary = 12505;
+					break;
+				case '23,765.12':
+					salary = 23765.12;
+					break;
+				case '36,478.86':
+					salary = 36478.86;
+					break;
+						
+			}
+			rate = Number(rate)/100			
+			pay = rate*salary	
+			pay3.innerText = pay.toFixed(2)
+		}
+
+		function setRemarks2(rate){
+			if (rate >= 1 && rate <=25){
+				remarks3.innerText= "Poor"
+					
+			}
+			else if (rate >= 26 && rate <=50){
+				remarks3.innerText= "Fair"
+			}
+			else if (rate >= 51 && rate <=75){
+				remarks3.innerText= "Good"
+			}
+			else if (rate >= 76 && rate <=100){
+				remarks3.innerText= "Excellent"
+			}	
+		}
+
+		
+		function displaySalary(salary){
+			document.getElementById('salary1').innerText = salary;
+		}
+
+		function computePay(salary,rate){
+		
+			switch (salary){
+				case '12,505.00':
+					 salary = 12505;
+					break;
+				case '23,765.12':
+					salary = 23765.12;
+					break;
+				case '36,478.86':
+					salary = 36478.86;
+					break;
+						
+			}
+			rate = Number(rate)/100			
+			pay = rate*salary	
+			pay1.innerText = pay.toFixed(2)
+		}
+
+		function setRemarks(rate){
+			/*Fill in this function body with the code that will set the remarks for a certain employee performance
+
+				1	-	25%		= Poor
+				26	-	50%		= Fair
+				51	-	75%		= Good
+				76	-	100%	= Excellent 
+
+			  display the output on the remarks column
+			*/
+			if (rate >= 1 && rate <=25){
+				remarks1.innerText= "Poor"
+					
+			}
+			else if (rate >= 26 && rate <=50){
+				remarks1.innerText= "Fair"
+			}
+			else if (rate >= 51 && rate <=75){
+				remarks1.innerText= "Good"
+			}
+			else if (rate >= 76 && rate <=100){
+				remarks1.innerText= "Excellent"
+			}	
+		}
+
+		function bonusInputHandler(obj){
+			/*
+				This is a bonus input handler crafter by your instructor to prevent the inputs from 
+				going out of bounds between 1-100%.
+				Something about inputValidation
+
+				Kindly do not mind, but if you wish to explore on this part, much better.
+			*/
+			let theValue = Number(obj.value);
+
+			if(theValue>100){
+				obj.value = 100;
+				//set the object's value to 100 if it exceeds 100
+			}
+			else if(theValue <= 100 && theValue >= 0){
+				//DO NOTHING COZ ITS GOOD
+			}
+			else if(theValue<0){
+				obj.value = 0;
+			}
+			else{
+				obj.value = '';	
+			}
+		}
+
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

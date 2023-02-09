@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <label>Minimum:<input type="number" id="minimum" class="minimum"></label>
+    <label>Maximum:<input type="number" id="maximum" class="maximum"></label>
+    <button type="button" id="rollButton" onclick="getNumbers(minimum.value,maximum.value)">roll</button><br>
+    <h2 id="tada">walag himala</h2><br>
+
+
+    <script>
+
+
+
+
+
+
+function getNumbers(minimum, maximum){
+    var numbers = [];
+
+var n;
+
+    var min = Math.ceil(minimum);
+    var max = Math.floor(maximum);
+   
+
+
+  while(numbers.length < 6) {
+    n = Math.floor(Math.random() * (max - min)) + min;    
+    if(numbers.includes(n) != true){
+      numbers.push(n);
+    }
+  }
+  document.getElementById("tada").innerHTML = numbers;
+
+
+
+}
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+<title>
+    Random Name
+</title>
+
+<style>
+.eee{
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(100, 153, 255);
+    padding: 10px;
+    background-color: rgb(41, 41, 41);
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 5%;
+}
+body{
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    vertical-align: middle;
+}
+
+h1{ 
+    color: white;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h2{
+    color: white;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.eeee{
+ margin-bottom: -15px;
+}
+
+.dont{
+    
+  align-items: center;
+  background-color: rgb(100, 153, 255);
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus { 
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.button-18:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.button-18:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+
+input{
+	
+    padding: 6px 12px;
+    width: 75vh;
+                    background: rgb(31, 32, 35);
+                    border: 1px solid rgb(60, 63, 68);
+                    border-radius: 4px;
+                    font-size: 13px;
+                    color: rgb(247, 248, 248);
+                    appearance: none;
+                    transition: border 0.15s ease 0s;
+                        outline: none;
+                        box-shadow: none;
+                        border-color: rgb(100, 153, 255);
+                    font-size: 20px;}
+
+.wee{
+    font-size: 40px;
+}
+</style>
+
+</head>
+
+
+
+
+<body><div class="eee">
+    <center>
+    <br><br>
+    <input type="text" name="name" id="name" placeholder="Put a name here, one at a time please." ><br><br>
+    <button class= "dont" onclick="addName()" role="button" >Name Adder</button>
+    <button class= "dont" onclick="generate(names)" role="button">Generate Random</button> <br>
+    
+    <h1 class="eeee">Student Names:</h1>
+    <h2 id="studentNames">(lists of names appears here)</h2>
+   
+    <h1 class="eeee">Selected Name:</h1>
+    <h2 id="output" class = "wee">(selected name appears here)</h2>
+
+    <br><br>
+    <button class= "dont" onclick="refresh()" role="button" >Reset</button><br><br>
+</center>
+</div>
+    
+    
+    <script type="text/javascript">
+        
+        let names = [];
+         
+        function addName(){
+
+            
+			name = document.getElementById('name').value
+			if(names.includes(name) == false && names.length < 4){ 
+				names.push(name);
+			}	
+            
+            document.getElementById('studentNames').innerHTML = names;
+            
+            document.getElementById('name').value = '';
+        }
+
+        function generate(names){           
+            document.getElementById('output').innerHTML =""; 
+            newName = names[Math.floor(Math.random()*names.length)];   //index        
+            document.getElementById('output').innerHTML = newName; 
+        }
+        
+        function refresh(){
+        window.location.reload("Refresh")
+      }
+
+
+    </script>
+</body>
+</html>
+
+

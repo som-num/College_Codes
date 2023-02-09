@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 Random Values</title>
+
+  <style>
+    .outer {
+      display: table;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .middle {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .eee {
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 50%;
+      border: 3px solid rgb(100, 153, 255);
+      padding: 10px;
+      background-color: rgb(41, 41, 41);
+      border-radius: 30px 30px 30px 30px;
+    }
+
+
+
+
+
+    body {
+      background-color: rgb(0, 0, 0);
+      align-items: center;
+    }
+
+    label {
+      color: white;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+      font-size: 24px;
+    }
+
+
+
+
+
+
+    h2 {
+      color: white;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+
+    .eeee {
+      margin-bottom: -15px;
+    }
+
+    .dont {
+
+      align-items: center;
+      background-color: rgb(100, 153, 255);
+      border: 0;
+      border-radius: 100px;
+      box-sizing: border-box;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 20px;
+      max-width: 480px;
+      min-height: 40px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      touch-action: manipulation;
+      transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      user-select: none;
+      -webkit-user-select: none;
+      vertical-align: middle;
+    }
+
+    .button-18:hover,
+    .button-18:focus {
+      background-color: #16437E;
+      color: #ffffff;
+    }
+
+    .button-18:active {
+      background: #09223b;
+      color: rgb(255, 255, 255, .7);
+    }
+
+    .button-18:disabled {
+      cursor: not-allowed;
+      background: rgba(0, 0, 0, .08);
+      color: rgba(0, 0, 0, .3);
+    }
+
+    input {
+
+      padding: 6px 12px;
+      width: 15vh;
+      background: rgb(31, 32, 35);
+      border: 1px solid rgb(60, 63, 68);
+      border-radius: 4px;
+      font-size: 13px;
+      color: rgb(247, 248, 248);
+      appearance: none;
+      transition: border 0.15s ease 0s;
+      outline: none;
+      box-shadow: none;
+      border-color: rgb(100, 153, 255);
+      font-size: 20px;
+    }
+
+    .wee {
+      font-size: 35px;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+  <div class="outer">
+    <div class="middle">
+      <div class="eee">
+        <center><br><br>
+          <label>Minimum: <input type="number" id="minimum" class="minimum"></label> &nbsp; &nbsp; &nbsp;
+          <label>Maximum: <input type="number" id="maximum" class="maximum"></label><br><br>
+          <button type="button" id="rollButton" class="dont" onclick="getNumbers(minimum.value,maximum.value)">Generate
+            6 Random Numbers</button><br>
+          <h2 id="tada" class="wee">6 random numbers will appear here.</h2><br>
+        </center>
+
+
+      </div>
+    </div>
+  </div>
+  <script>
+
+
+
+
+
+    function getNumbers(minimum, maximum) {
+      var numbers = [];
+
+      var n, p;
+
+      var min = Math.ceil(minimum);
+      var max = Math.floor(maximum);
+
+      if ((max - min) < 6) {
+        const unused = "Minimum and Maximum numbers must be 6 or more values away.";
+
+        document.getElementById("tada").innerHTML = "<span style='color:red'>" + min + " and " + max + " does not meet the minimum range requirement." + "<span>"; //errror messegeee
+      }
+      else {
+
+        while (numbers.length < 6) {
+          n = Math.floor(Math.random() * (max - min)) + min;
+          if (numbers.includes(n) == false) {
+            numbers.push(n);
+
+
+          }
+
+        }
+
+
+        document.getElementById("tada").innerHTML = numbers;
+      }
+    }
+
+
+
+
+
+  </script>
+</body>
+
+</html>

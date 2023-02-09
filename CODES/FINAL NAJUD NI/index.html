@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ORASAN NI SHEN</title>
+  <link rel="icon" type="image/x-icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+   <div class="clckcont">
+    <div class="clock">
+     <div class="circle" id="sc" style="--clr: #04fc43"><i></i></div>
+     <div class="circle circle2" id="mn" style="--clr: #fee800"><i></i></div>
+     <div class="circle circle3" id="hr" style="--clr: #ff2972"><i></i></div>
+
+     <span style="--i: 1"><b>I</b></span>
+     <span style="--i: 2"><b>II</b></span>
+     <span style="--i: 3"><b>III</b></span>
+     <span style="--i: 4"><b>IV</b></span>
+     <span style="--i: 5"><b>V</b></span>
+     <span style="--i: 6"><b>VI</b></span>
+     <span style="--i: 7"><b>VII</b></span>
+     <span style="--i: 8"><b>VIII</b></span>
+     <span style="--i: 9"><b>IX</b></span>
+     <span style="--i: 10"><b>X</b></span>
+     <span style="--i: 11"><b>XI</b></span>
+     <span style="--i: 12"><b>XII</b></span>
+    </div>
+   </div>
+   <br><br>
+   
+     <!-- Alarm -->
+ <center class="center1">
+  <section>
+    <div class="time-display">
+      <div id="clock"></div>
+    </div>
+  
+    
+      <div class="digitalCont">
+        <label class="alarm-heading"><label>
+            <select name="Format" id="tfourHour">
+              <option value="12">• 12Hours</option>
+              <option value="24">• 24Hours</option>
+            </select>
+      </div>
+      <br><br>
+    <form class="setAlarm">
+      <div class="set-alarm-field">
+        <input type="number" name="a_hour" id="a_hour" placeholder="HH" max="23" min="00">
+        <input type="number" name="a_min" id="a_min" placeholder="MM" max="59" min="00">
+        <input type="number" name="a_sec" id="a_sec" placeholder="SS" max="59" min="00">
+  
+        <select id="ampm">
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+      <div class="controls">
+        <button type="submit" class="set-alarm">Set Alarm</button>
+        <button type="reset" onclick="clearAlarm()" class="clear-alarm">Stop Alarm</button>
+      </div>
+    </form>
+  </section>
+  
+  
+  <section>
+    
+      <div>
+        <h3 class="alarm-heading" style="margin-top: -20px;">Upcoming Alarms</h3>
+      </div>
+    
+    <div>
+      <div id="myList">
+  
+      </div>
+    </div>
+  </section>
+ 
+ <br><br>
+ 
+ <div class="buttons">
+  <button type="submit" class="btnStopwatch" onclick="openPopupSW()"> Stopwatch </button>
+  <button type="submit" class="btnStopwatch" onclick="openPopupCD()"> Countdown </button>
+ </div>
+</div>
+
+<div class="popup" id="popupSW">
+ <center>
+  <div class="stopwatch">
+         <h1>Stopwatch</h1>
+         <h1 id="swatchdisplay" class="swatchdisplay">00:00:00.00</h1>
+      <button id="handler" onclick="startStop()" >Start</button>
+      <button onclick="Reset()">Reset</button>
+      <button onclick="lap()">Lap</button>
+      <h2 id="lapShow" class="laps"></h2>
+  </div>
+ </center>
+      <button type="button" onclick="closePopupSW()" class="closeBtn"> Close </button>
+</div>
+  
+  
+<div class="popup" id="popupCD">
+  <h2>Countdown Timer</h2>
+   <div class="containercd">
+      
+    <p id="hour-label" class="label">Hours</p>
+    <p id="min-label" class="label">Minutes</p>
+    <p id="sec-label" class="label">Seconds</p>
+    <p id="milsec-label" class="label">Millisecs</p>
+        
+    <input id="hour" type="number" max="99" min="" value="0" class="cdtime">
+    <p id="p1" class="semicolon">:</p>
+    <input id="minute" type="number" max="60" min="" value="0" class="cdtime">
+    <p id="p2" class="semicolon">:</p>
+    <input id="sec" type="number" max="60" min="" value="0" class="cdtime">
+    <p id="p3" class="semicolon">:</p>
+    <input id="milsec" disabled max="60" min="" value="0" class="cdtime">
+   
+    <button id="start" class="cdbtn">Start</button>
+    <button id="reset" class="cdbtn">Reset</button>
+    <button id="stop" class="cdbtn">Stop</button>
+
+  </div>
+   <button type="button" onclick="closePopupCD()" class="closeBtn"> Close </button>
+</div>
+
+  
+  <script src="main.js"></script>
+</body>
+</html>

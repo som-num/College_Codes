@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title> Calculator </title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="in" id="num1">
+    <input type="number" name="in" id="num2">
+    <input type="text" name="in" id="operator">
+    <button class="out" id="but" onclick="generateAnswer(num1.value,num2.value,operator.value)"> = </button>
+    <h2 id="output"></h2>
+
+    <script type="text/javascript">
+        function generateAnswer(a, b, c) {
+            a = Number(a);
+            b = Number(b);
+            switch (c) {
+                case "+": document.getElementById('output').innerHTML = sum(a, b);
+                    break;
+                case "-": document.getElementById('output').innerHTML = dif(a, b);
+                    break;
+                case "*": document.getElementById('output').innerHTML = pro(a, b);
+                    break;
+                case "/": document.getElementById('output').innerHTML = qou(a, b);
+                    break;
+            }
+
+        }
+
+        const sum = (a, b) => a + b;
+        const pro = (a, b) => a * b;
+        const dif = (a, b) => a - b;
+        const qou = (a, b) => a / b;
+    </script>
+
+</body>
+
+</html>

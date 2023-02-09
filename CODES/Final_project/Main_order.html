@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Food Ordering Program</title>
+    <link rel="stylesheet" href="order.css" />
+    <link rel="icon" type="image/x-icon" href="icon.jpg">
+    <script src="order.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 class="band-name band-name-large">Pagkaon</h1>
+    </header>
+    <section class="container content-section">
+        <h2 class="section-header">Food</h2>
+        <div class="buy-foods">
+            <div class="buy-food">
+                <span class="buy-food-title">Burger</span>
+                <img class="buy-food-image" src="burger pro max.png">
+              
+                <div class="buy-food-details">
+                    <span class="buy-food-price">₱50.16</span>
+                    <button class="btn btn-primary buy-food-button" type="button">Add</button>
+                </div>
+            </div>
+            <div class="buy-food">
+                <span class="buy-food-title">Buger Pro</span>
+                <img class="buy-food-image" src="burgerpro.png">
+               
+                <div class="buy-food-details">
+                    <span class="buy-food-price">₱73.81</span>
+                    <button class="btn btn-primary buy-food-button" type="button">Add</button>
+                </div>
+            </div>
+            <div class="buy-food">
+                <span class="buy-food-title">Burger Pro Max</span>
+                <img class="buy-food-image" src="burger.png">
+               
+                <div class="buy-food-details">
+                    <span class="buy-food-price">₱99.68</span>
+                    <button class="btn btn-primary buy-food-button" type="button">Add</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="container content-section">
+        <h2 class="section-header">Drinks</h2>
+        <div class="buy-foods">
+            <div class="buy-food">
+                <span class="buy-food-title">Scalii</span>
+                <img class="buy-food-image" src="cali.png">
+               
+                <div class="buy-food-details">
+                    <span class="buy-food-price">₱50.42</span>
+                    <button class="btn btn-primary buy-food-button" type="button">Add</button>
+                </div>
+            </div>
+            <div class="buy-food">
+                <span class="buy-food-title">Coke</span>
+                <img class="buy-food-image" src="coke.png">
+                
+                <div class="buy-food-details">
+                    <span class="buy-food-price">₱30.97</span>
+                    <button class="btn btn-primary buy-food-button" type="button">Add</button>
+                </div>
+            </div>
+            <div class="buy-food">
+                <span class="buy-food-title">Coffee</span>
+                <img class="buy-food-image" src="coffee.png">
+                
+                <div class="buy-food-details">
+                    <span class="buy-food-price">₱40.43</span>
+                    <button class="btn btn-primary buy-food-button" type="button">Add</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container content-section">
+        <h2 class="section-header">Name</h2>
+        <input class="customer-name" type="text" value="" placeholder="Please enter Name">
+        <h2 class="section-header">Order</h2>
+        <div class="order-row">
+            <span class="order-food order-header order-column">food</span>
+            <span class="order-price order-header order-column">Price</span>
+            <span class="order-quantity order-header order-column">Quantity</span>
+            <span class="order-subtotal order-header order-column">Subtotal</span>
+        </div>
+        <div class="order-foods">
+            <!-- <div class="order-row">
+                <div class="order-food order-column">
+                    <img class="order-food-image" src="" >
+                    
+                    <span class="order-food-title">Burger</span>
+                </div>
+                <span class="order-price order-column">₱50.01</span>
+                <div class="order quantity order-column">
+                    <input class="order-quantity-input" type="number" value="">
+                    <button class="btn btn-danger" type="button">REMOVE</button>
+                </div>
+                <div class="order-subtotal order-column">                
+                    <span class="order-subtotal-price">20</span>
+                </div>
+            </div>
+            <div class="order-row">
+                <div class="order-food order-column">
+                    <img class="order-food-image" src="" >
+                    <span class="order-food-title">Cali</span>
+                </div>
+                <span class="order-price order-column">₱50.01</span>
+                <div class="order quantity order-column">
+                    <input class="order-quantity-input" type="number" value="">
+                    <button class="btn btn-danger" type="button">REMOVE</button>
+                </div>
+                
+                <span class="order-subtotal-price order-column">30</span>
+                
+            </div> -->
+        </div>
+        <div class="order-total">
+            <strong class="order-total-title">Total</strong>
+            <span class="order-total-price" id="totalPrice">0</span>
+        </div>
+        <h2 class="section-header">Payment</h2>
+        <input class="customer-payment" type="number" id="payamount" value="">
+        <button class="btn btn-primary btn-purchase" type="button">Check out</button>
+        <button class="btn btn-primary output-button" type="button">Repeat order</button>
+    </section>
+
+
+
+</body>
+
+</html>

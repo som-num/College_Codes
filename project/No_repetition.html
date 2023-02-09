@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<body>
+    <h1>
+    <label>Minimum Number</label>
+    <input type="number" name="min" id="min">
+    <label>Maximum Number</label>
+    <input type="number" name="max" id="max">
+    </h1>
+    
+    <button onclick="generate(min.value,max.value)">Generate random</button>
+
+    <h1>Output</h1>
+    <h2 id="output"></h2>
+
+    <script type="text/javascript">
+
+        function generate(min,max){
+            min = Math.ceil(min) //set the minimum
+            max = Math.floor(max) //set the maximum
+            var randomNum=[] //array para diri ibutang ang mga number
+            document.getElementById('output').innerHTML =""; //para mo blank balik kung mo input ug lahi
+
+            while (randomNum.length != 6){                // since 6 man ka number kinahanglan 
+                newNum = (Math.floor(Math.random()*(max-min)+min));  //function para pag generate random number
+                if(randomNum.includes(newNum) != true){
+                    randomNum.push(newNum); //para masulod sa array ang mga na generate nga number
+                } 
+            }
+            document.getElementById('output').innerHTML = randomNum;
+        }
+        
+    </script>
+</body>
+</html>
