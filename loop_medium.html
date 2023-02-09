@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h3 id="byTens"></h3>
+        <script language ="javascript" type="text/javascript">
+            for(i=1;i<=100;i++){
+                comma =","
+                document.getElementById('byTens').innerText += i                
+                if (i%10 != 0){
+                document.getElementById('byTens').innerText += comma
+                }
+                else if( i%10 == 0){                
+                document.getElementById('byTens').innerHTML += "<br>"
+                }                
+            }
+            
+
+        </script>
+    </body>
+</html>

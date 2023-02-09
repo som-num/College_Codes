@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title> Calculator </title>
+    <style>
+        /* title {} */
+
+        .inputbox {
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 50%;
+            border: 3px solid rgb(100, 153, 255);
+            padding: 10px;
+            background-color: rgb(41, 41, 41);
+            border-radius: 30px 30px 30px 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inputbox">
+        <input type="text" class="in" id="output1" value="0" disabled><br><br>
+        <input type="number" class="in" id="num1"><br>
+        <input type="number" class="in" id="num2"><br>
+        <!-- <input type="text" name="in" id="operator"> -->
+    </div>
+    <button class="out" id="but" onclick="outputAnswer()"> = </button>
+    <button class="out" id="but" onclick="generateAnswer(num1.value,num2.value,'+')"> + </button>
+    <button class="out" id="but" onclick="generateAnswer(num1.value,num2.value,'-')"> - </button>
+    <button class="out" id="but" onclick="generateAnswer(num1.value,num2.value,'*')"> * </button>
+    <button class="out" id="but" onclick="generateAnswer(num1.value,num2.value,'/')"> / </button>
+    <h2 id="output"></h2>
+
+    <script type="text/javascript">
+        let answer = "";
+        function generateAnswer(a, b, c) {
+            a = Number(a);
+            b = Number(b);
+            switch (c) {
+                case "+": answer = sum(a, b);
+                    break;
+                case "-": answer = dif(a, b);
+                    break;
+                case "*": answer = pro(a, b);
+                    break;
+                case "/": answer = qou(a, b);
+                    break;
+
+            }
+            return answer
+
+        }
+        function outputAnswer() {
+            document.getElementById('output1').value = answer;
+        }
+
+
+        const sum = (a, b) => a + b;
+        const pro = (a, b) => a * b;
+        const dif = (a, b) => a - b;
+        const qou = (a, b) => a / b;
+    </script>
+
+</body>
+
+</html>
