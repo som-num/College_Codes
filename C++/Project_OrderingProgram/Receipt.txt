@@ -1,0 +1,10 @@
+                 Pagkaon Receipt
+               Address:Kuan city
+             Contact: 0912334512
+--------------------------------------------------
+Food/Drink          Price          Qty.           Subtotal       
+(1)Burger           49             1              49             
+--------------------------------------------------
+                                   Total: 49
+                                 Payment: 100
+                                  Change: 51

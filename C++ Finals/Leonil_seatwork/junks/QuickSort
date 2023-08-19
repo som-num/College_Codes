@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+class quickSort{
+private:
+    int partition(vector<int> arr, low, high){
+        
+
+    }
+
+    void swap(int num1, int num2){
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+
+    }
+};
+
+
+int main(){
+    quickSort sorter;
+    cout<<"bajoasdf aishdfio";
+}
+
